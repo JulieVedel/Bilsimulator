@@ -28,14 +28,13 @@ public class Main {
                 if (dytten.motor.onOff) {
                     System.out.println("Du må ikke starte bilen igen!");
                 } else {
-                    dytten.motor.setOnOff(true);
+                    dytten.motor.OnOff(true);
                     dytten.motor();
                 }
             } else if (input.equals("accelerer")) {
                 dytten.accelerer();
 
             } else if (input.equals("brems")) {
-                System.out.println("Vil du selv sætte en bestemt hastighed? Skriv ja eller nej.");
                 dytten.brems();
 
             } else if (input.equals("drej")) {
@@ -44,7 +43,7 @@ public class Main {
 
             } else if (input.equals("stop")) {
                 stop = true;
-                dytten.motor.setOnOff(false);
+                dytten.motor.OnOff(false);
                 dytten.motor();
             } else {
                 System.out.println("Du har intastet en ugyldig kommando.");

@@ -7,11 +7,11 @@ public class Motor {
          this.onOff = onOff;
      }
 
-     public boolean isOnOff() {
-         return onOff;
-     }
-
-    public void setOnOff(boolean onOff) {
+    public void OnOff(boolean onOff) {
         this.onOff = onOff;
+    }
+
+    public boolean isOnOff() {
+        return onOff;
     }
 }
