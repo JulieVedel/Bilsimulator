@@ -25,11 +25,18 @@ public class Main {
             String input = scanner.nextLine().toLowerCase();
 
             if (input.equals("start")) {
-                dytten.motor.setOnOff(true);
-                dytten.motor();
+                if (dytten.motor.onOff) {
+                    System.out.println("Du må ikke starte bilen igen!");
+                } else {
+                    dytten.motor.setOnOff(true);
+                    dytten.motor();
+                }
             } else if (input.equals("accelerer")) {
+                dytten.accelerer();
 
             } else if (input.equals("brems")) {
+                System.out.println("Vil du selv sætte en bestemt hastighed? Skriv ja eller nej.");
+                dytten.brems();
 
             } else if (input.equals("drej")) {
 
@@ -39,6 +46,8 @@ public class Main {
                 stop = true;
                 dytten.motor.setOnOff(false);
                 dytten.motor();
+            } else {
+                System.out.println("Du har intastet en ugyldig kommando.");
             }
         }
     }

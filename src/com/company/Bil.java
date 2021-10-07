@@ -7,7 +7,7 @@ public class Bil {
     int antalDøre;
     String softwareVersion;
     String gpsKoordinater;
-    double hastighed;
+    int hastighed;
 
     Rat rat = new Rat();
     Bremse bremse = new Bremse();
@@ -34,13 +34,25 @@ public class Bil {
         }
     }
 
-    public void hastighed(int hastighedStiger) {
-        System.out.println("Hastigheden stiger med " + hastighedStiger + " km/t.");
+    public void accelerer() {
+        hastighed += 1;
+        System.out.println("Du sætter farten op med 1 km/t, så din hastighed nu er " + hastighed + " km/t.");
     }
 
-    public void bremse(int bremsetryk) {
-        System.out.println("Bremsen er presset " + bremsetryk + "% ned.");
+    public void brems() {
+        hastighed -= 1;
+        if (hastighed < 0) {
+            System.out.println("Nu begynder du at bakke. Det må du ikke.");
+            hastighed = 0;
+        } else {
+            System.out.println("Du sætter farten ned med 1 km/t, så din hastighed nu er " + hastighed + " km/t.");
+        }
     }
+    public void cruiseControl(int hastighedInput) {
+        hastighed = hastighedInput;
+        System.out.println("Din hastighed er nu " + hastighed + " km/t. ");
+    }
+
 
 
 
@@ -103,7 +115,7 @@ public class Bil {
     public double getHastighed() {
         return hastighed;
     }
-    public void setHastighed(double hastighed) {
+    public void setHastighed(int hastighed) {
         this.hastighed = hastighed;
     }
 
